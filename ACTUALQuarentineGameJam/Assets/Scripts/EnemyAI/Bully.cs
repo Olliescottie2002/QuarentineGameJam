@@ -11,7 +11,7 @@ public class Bully : MonoBehaviour
         fsm = GetComponent<EnemyFSM>();
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         switch (fsm.currentState)
         {
