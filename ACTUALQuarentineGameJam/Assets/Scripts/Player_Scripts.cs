@@ -5,6 +5,17 @@ using UnityEngine.Assertions.Must;
 
 public class Player_Scripts : MonoBehaviour
 {
+    #region Singleton
+
+    public static Player_Scripts instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+    #endregion
+
+
     Rigidbody2D rigid;
     public float moveSpeed;
     bool facingRight = true;
