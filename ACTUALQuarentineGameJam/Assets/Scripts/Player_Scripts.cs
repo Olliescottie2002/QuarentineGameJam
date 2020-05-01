@@ -16,9 +16,14 @@ public class Player_Scripts : MonoBehaviour
     #endregion
 
 
+    [Header("Movement")]
     Rigidbody2D rigid;
     public float moveSpeed;
     bool facingRight = true;
+
+    [Header("Stress Levels")]
+    private int stress = 0;
+    public int maxStress;
 
     void Start()
     {
@@ -48,6 +53,8 @@ public class Player_Scripts : MonoBehaviour
 
         transform.Rotate(0f, 180f, 0f);
     }
+    
+
 }
     
 

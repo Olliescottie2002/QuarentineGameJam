@@ -1,0 +1,79 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class PlayerStress : MonoBehaviour
+{
+    [Header("Stress Levels")]
+    public Slider stressSlider;
+    private float stress = 0;
+
+    public int timeBeforeOutOfCombat;
+    private float currentTimeInCombat;
+    private float currentTimeOutOfCombat;
+    private bool inCombat;
+
+
+    private void Start()
+    {
+        stressSlider.value = stress;
+        inCombat = false;
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            TakeDamage(10);
+        }
+
+        stressSlider.value = stress;
+
+        if (!CheckIfInCombat())
+        {
+            //If not in combat, slowly reduce stress levels
+            currentTimeOutOfCombat += Time.deltaTime;
+            if(stress < 0)
+            {
+                stress = 0;
+            }
+            if(stress != 0)
+            {
+                stress -= currentTimeOutOfCombat * 0.125f;
+            }
+        }        
+    }
+
+    void TakeDamage(int damage)
+    {
+        stress += damage;
+        inCombat = true;
+        currentTimeInCombat = timeBeforeOutOfCombat;
+
+        if (stress >= 100)
+        {
+            Debug.Log("GAME OVER, YOU LOSE!");
+        }
+
+    }
+
+    //Make stress decrese over time
+
+    private bool CheckIfInCombat()
+    {
+        if (currentTimeInCombat <= 0)
+        {
+            inCombat = false;
+            return false;
+        }
+        else
+        {
+            currentTimeInCombat -= Time.deltaTime;
+            currentTimeOutOfCombat = 0;
+            inCombat = true;
+            return true;
+        }
+    }
+
+
+}
