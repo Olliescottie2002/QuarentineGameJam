@@ -35,6 +35,7 @@ public class EnemyFSM : MonoBehaviour
 
     [Header("Attack")]
     public float attackRange;
+    public bool attacked;
 
 
     private void Start()
@@ -128,7 +129,11 @@ public class EnemyFSM : MonoBehaviour
     {
         print("Attacking");
         //here we would run some code to do with attacking the player but also maybe a coroutine b4 returning to chasing
-        Invoke("ReturnBackToChasing", 1);
+        if (!attacked)
+        {
+            Invoke("ReturnBackToChasing", 1);
+            attacked = true;
+        }
         
     }
     public void Dead()
@@ -139,6 +144,7 @@ public class EnemyFSM : MonoBehaviour
     private void ReturnBackToChasing()
     {
         currentState = EnemyState.Chasing;
+        attacked = false;
     }
 
     public void TakeDamageFromProjectile()

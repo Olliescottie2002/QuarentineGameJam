@@ -44,7 +44,7 @@ public class PlayerStress : MonoBehaviour
         }        
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         stress += damage;
         inCombat = true;
