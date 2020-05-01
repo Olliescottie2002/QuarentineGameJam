@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bully : MonoBehaviour
 {
     private EnemyFSM fsm;
+    
 
     private void Start()
     {
@@ -32,4 +33,7 @@ public class Bully : MonoBehaviour
                 break;
         }
     }
+
+    
+
 }

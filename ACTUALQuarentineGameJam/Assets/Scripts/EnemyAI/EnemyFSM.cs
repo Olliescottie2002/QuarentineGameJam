@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyFSM : MonoBehaviour
 {
     private Transform player;
+    public int health;
 
     public enum EnemyState
     {
@@ -138,5 +139,16 @@ public class EnemyFSM : MonoBehaviour
     private void ReturnBackToChasing()
     {
         currentState = EnemyState.Chasing;
+    }
+
+    public void TakeDamageFromProjectile()
+    {
+        health -= 1;
+
+        if (health <= 0)
+        {
+            currentState = EnemyState.Dead;
+            Destroy(gameObject);
+        }
     }
 }

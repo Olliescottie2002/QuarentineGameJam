@@ -21,10 +21,6 @@ public class Player_Scripts : MonoBehaviour
     public float moveSpeed;
     bool facingRight = true;
 
-    [Header("Stress Levels")]
-    private int stress = 0;
-    public int maxStress;
-
     void Start()
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
