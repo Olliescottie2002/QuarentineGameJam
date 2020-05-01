@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     
     public void onQuitClicked()
     {
+        print("Quitting Game");
         Application.Quit();
     }
 }
