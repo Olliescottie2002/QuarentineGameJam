@@ -108,7 +108,16 @@ public class EnemyFSM : MonoBehaviour
             }
             else
             {
-                Vector2.MoveTowards(transform.position, player.position, chaseSpeed * Time.deltaTime);
+                if(transform.position.x > player.position.x)
+                {
+                    transform.localScale = new Vector3(-1, 1, 1);
+                }
+                else
+                {
+                    transform.localScale = new Vector3(1, 1, 1);
+                }
+
+                transform.position = Vector2.MoveTowards(transform.position, player.position, chaseSpeed * Time.deltaTime);
             }
         }
 
