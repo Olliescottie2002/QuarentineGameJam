@@ -6,6 +6,7 @@ using UnityEngine.Assertions.Must;
 public class Player_Scripts : MonoBehaviour
 {
     Rigidbody2D rigid;
+    public float moveSpeed;
     bool facingRight = true;
 
     void Start()
@@ -14,8 +15,9 @@ public class Player_Scripts : MonoBehaviour
     }
     void Update()
     {
-        float move = Input.GetAxisRaw("Horizontal");
-        rigid.velocity = new Vector2(move * 5f, rigid.velocity.y);       
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+        rigid.velocity = new Vector2(moveX * moveSpeed, moveY * moveSpeed);       
 
 
         if (facingRight && rigid.velocity.x < 0)
