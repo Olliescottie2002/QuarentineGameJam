@@ -6,6 +6,7 @@ public class PlayerProjectile : MonoBehaviour
 {
     public Vector3 target;
     public float projectileSpeed;
+    public GameObject penDestroy;
 
     private void Start()
     {
@@ -53,10 +54,12 @@ public class PlayerProjectile : MonoBehaviour
         if (other.CompareTag("Bully"))
         {
             other.GetComponent<EnemyFSM>().TakeDamageFromProjectile();
+            Instantiate(penDestroy, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         else if (other.CompareTag("Environment"))
         {
+            Instantiate(penDestroy, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

@@ -123,3 +123,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {x: 0, y: 0, z: 0}
   projectileSpeed: 8
+  penDestroy: {fileID: 8174214378816615552, guid: 10d32b5a72445b24a95b2cc2d9d79c6a,
+    type: 3}
