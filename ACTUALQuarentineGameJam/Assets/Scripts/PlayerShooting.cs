@@ -6,6 +6,8 @@ public class PlayerShooting : MonoBehaviour
 {
     private Vector3 target;
     public GameObject pen;
+    public float camShakeAmt;
+    public float camShakeDuration;
 
     private void Start()
     {
@@ -22,6 +24,7 @@ public class PlayerShooting : MonoBehaviour
             //Spawn projectile
             GameObject objectSpawned = Instantiate(pen, transform.position, Quaternion.identity);
             objectSpawned.GetComponent<PlayerProjectile>().target = target;
+            Camera.main.GetComponent<CameraShake>().Shake(camShakeAmt, camShakeDuration);
 
         }
 

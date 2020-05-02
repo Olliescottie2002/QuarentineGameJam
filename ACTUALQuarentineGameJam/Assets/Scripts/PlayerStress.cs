@@ -14,6 +14,9 @@ public class PlayerStress : MonoBehaviour
     private float currentTimeOutOfCombat;
     private bool inCombat;
 
+    public float camShakeAmt;
+    public float camShakeDuration;
+
 
     private void Start()
     {
@@ -49,6 +52,7 @@ public class PlayerStress : MonoBehaviour
         stress += damage;
         inCombat = true;
         currentTimeInCombat = timeBeforeOutOfCombat;
+        Camera.main.GetComponent<CameraShake>().Shake(camShakeAmt, camShakeDuration);
 
         if (stress >= 100)
         {

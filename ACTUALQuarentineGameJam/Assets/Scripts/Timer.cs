@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI timeText;
     public int startTime;
     private int currentTime;
+    public int redDuration;
 
 
     private void Start()
@@ -28,6 +29,11 @@ public class Timer : MonoBehaviour
         string stringFirstPart = firstPart.ToString().Substring(0,1);
         int firstNum = Convert.ToInt32(stringFirstPart);
         int secondPart = currentTime % 60;
+
+        if(secondPart == 0)
+        {
+            StartCoroutine(flashRed(redDuration));
+        }
 
         if(secondPart < 10)
         {
@@ -50,4 +56,10 @@ public class Timer : MonoBehaviour
         }
     }
 
+    private IEnumerator flashRed(int timeDelay)
+    {
+        timeText.color = Color.red;
+        yield return new WaitForSeconds(timeDelay);
+        timeText.color = Color.white;
+    }
 }
