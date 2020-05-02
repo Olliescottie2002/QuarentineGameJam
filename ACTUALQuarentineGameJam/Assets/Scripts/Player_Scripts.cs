@@ -40,6 +40,10 @@ public class Player_Scripts : MonoBehaviour
         {
             FlipPlayer();
         }
+        if (moveY > 0 )
+        {
+            anim.setBool("Is_player_facing_up_or_Down", true);
+        }
 
     }
 
