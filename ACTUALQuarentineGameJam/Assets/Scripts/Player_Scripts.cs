@@ -29,7 +29,7 @@ public class Player_Scripts : MonoBehaviour
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
-        rigid.velocity = new Vector2(moveX * moveSpeed, moveY * moveSpeed);       
+        rigid.velocity = new Vector2(moveX * moveSpeed, moveY * moveSpeed);
 
 
         if (facingRight && rigid.velocity.x < 0)
@@ -40,26 +40,14 @@ public class Player_Scripts : MonoBehaviour
         {
             FlipPlayer();
         }
-        if (moveY > 0 )
-        {
-            anim.setBool("Is_player_facing_up_or_Down", true);
-        }
-
     }
 
-    void FlipPlayer() 
+    void FlipPlayer()
     {
         facingRight = !facingRight;
 
         transform.Rotate(0f, 180f, 0f);
     }
-    
+
 
 }
-    
-
- 
-
-
-
-
