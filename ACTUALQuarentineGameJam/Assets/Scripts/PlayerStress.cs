@@ -25,11 +25,6 @@ public class PlayerStress : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            TakeDamage(10);
-        }
-
         stressSlider.value = stress;
 
         if (!CheckIfInCombat())
