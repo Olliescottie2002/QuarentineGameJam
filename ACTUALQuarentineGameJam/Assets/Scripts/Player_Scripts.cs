@@ -20,6 +20,7 @@ public class Player_Scripts : MonoBehaviour
     Rigidbody2D rigid;
     public float moveSpeed;
     bool facingRight = true;
+    public Animator anim;
 
     void Start()
     {
@@ -31,23 +32,8 @@ public class Player_Scripts : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
         rigid.velocity = new Vector2(moveX * moveSpeed, moveY * moveSpeed);
 
-
-        if (facingRight && rigid.velocity.x < 0)
-        {
-            FlipPlayer();
-        }
-        else if (!facingRight && rigid.velocity.x > 0)
-        {
-            FlipPlayer();
-        }
-    }
-
-    void FlipPlayer()
-    {
-        facingRight = !facingRight;
-
-        transform.Rotate(0f, 180f, 0f);
-    }
-
-
+        anim.SetFloat("Horizontal", moveX);
+        anim.SetFloat("Vertical", moveY);
+        anim.SetFloat("Speed", rigid.velocity.sqrMagnitude);       
+    }   
 }
