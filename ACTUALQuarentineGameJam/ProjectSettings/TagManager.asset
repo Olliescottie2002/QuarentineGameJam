@@ -7,6 +7,7 @@ TagManager:
   - Bully
   - Pen
   - Environment
+  - Collectables
   layers:
   - Default
   - TransparentFX
@@ -43,4 +44,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Collectables
+    uniqueID: 1262957987
     locked: 0
