@@ -19,9 +19,6 @@ public class Bully : MonoBehaviour
             case EnemyFSM.EnemyState.Idle:
                 fsm.Idle();
                 break;
-            case EnemyFSM.EnemyState.Patrolling:
-                fsm.Patrol();
-                break;
             case EnemyFSM.EnemyState.Chasing:
                 fsm.Chase();
                 attackedThisTime = false;
