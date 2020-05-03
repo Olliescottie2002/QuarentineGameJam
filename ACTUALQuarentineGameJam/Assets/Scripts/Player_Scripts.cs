@@ -19,7 +19,6 @@ public class Player_Scripts : MonoBehaviour
     [Header("Movement")]
     Rigidbody2D rigid;
     public float moveSpeed;
-    bool facingRight = true;
     public Animator anim;
 
     void Start()
@@ -35,5 +34,7 @@ public class Player_Scripts : MonoBehaviour
         anim.SetFloat("Horizontal", moveX);
         anim.SetFloat("Vertical", moveY);
         anim.SetFloat("Speed", rigid.velocity.sqrMagnitude);       
-    }   
+    }  
+    
+    
 }
