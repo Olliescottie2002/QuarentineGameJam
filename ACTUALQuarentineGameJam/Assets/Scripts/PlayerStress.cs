@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerStress : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class PlayerStress : MonoBehaviour
     public float camShakeAmt;
     public float camShakeDuration;
 
+    public GameObject loseText;
+        
 
     private void Start()
     {
@@ -51,7 +54,8 @@ public class PlayerStress : MonoBehaviour
 
         if (stress >= 100)
         {
-            Debug.Log("GAME OVER, YOU LOSE!");
+            loseText.SetActive(true);
+            Invoke("LoadMenu", 2f);
         }
 
     }
@@ -72,6 +76,11 @@ public class PlayerStress : MonoBehaviour
             inCombat = true;
             return true;
         }
+    }
+
+    private void LoadMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
 

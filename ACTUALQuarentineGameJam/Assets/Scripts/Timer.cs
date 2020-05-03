@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
     public int redDuration;
 
 
+
     private void Start()
     {
         currentTime = startTime;
@@ -48,7 +49,7 @@ public class Timer : MonoBehaviour
 
         if(currentTime <= 0)
         {
-            print("GAME OVER, YOU LOSE!");
+            Player_Scripts.instance.GetComponent<PlayerStress>().TakeDamage(100);
         }
         else
         {

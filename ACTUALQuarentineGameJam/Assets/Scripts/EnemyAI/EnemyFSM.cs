@@ -150,6 +150,7 @@ public class EnemyFSM : MonoBehaviour
     public void TakeDamageFromProjectile()
     {
         health -= 1;
+        Player_Scripts.instance.GetComponent<PlayerStress>().TakeDamage(0);
 
         if (health <= 0)
         {
