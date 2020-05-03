@@ -18,16 +18,6 @@ public class EnemyFSM : MonoBehaviour
 
     public EnemyState currentState;
 
-    [Header("Idle")]
-    public int minTimeBtwIdle;
-    public int maxTimeBtwIdle;
-
-    private bool setIdleTime;
-    private float currentTimeBtwIdle;
-
-    [Header("Patrol")]
-    public float patrolSpeed;
-
     [Header("Chase")]
     public float aggroRadius;
     public float unAggroRadius;
@@ -55,45 +45,16 @@ public class EnemyFSM : MonoBehaviour
         if(Vector2.Distance(transform.position, player.position) <= aggroRadius)
         {
             //Go to chase state
-            setIdleTime = false;
             currentState = EnemyState.Chasing;
         }
         else
         {
-            if (setIdleTime)
-            {
-                if(currentTimeBtwIdle <= 0)
-                {
-                    //Go to Patrol State
-                    setIdleTime = false;
-                    currentState = EnemyState.Patrolling;
-                
-                }
-                else
-                {
-                    currentTimeBtwIdle -= Time.deltaTime;
-                }
-            }
-            else
-            {
-                currentTimeBtwIdle = UnityEngine.Random.Range(minTimeBtwIdle, maxTimeBtwIdle + 1);
-                setIdleTime = true;
-            }
+            print("Idleing");
         }
+        
 
     }
 
-    public void Patrol()
-    {
-        print("Patrolling");
-        //Could potentially make it so that you can set waypoints for these enemies to follow
-
-        if (Vector2.Distance(transform.position, player.position) <= aggroRadius)
-        {
-            //Go to chase state
-            currentState = EnemyState.Chasing;
-        }
-    }
     public void Chase()
     {
         print("Chasing");
