@@ -52,7 +52,7 @@ public class EnemyProjectile : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerStress>().TakeDamage(5);
+            other.GetComponent<PlayerStress>().TakeDamage(10);
             Destroy(gameObject);
         }
         else if (other.CompareTag("Environment"))

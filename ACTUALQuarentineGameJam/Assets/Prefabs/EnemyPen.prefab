@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5450211002215356518
+--- !u!1 &3305684272489022752
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5971056271217721221}
-  - component: {fileID: 1881932387333311223}
-  - component: {fileID: 1584007376306458126}
-  - component: {fileID: 5542664650087941048}
-  - component: {fileID: -1342362892341278398}
+  - component: {fileID: 9109395752009475848}
+  - component: {fileID: 6321518082719568306}
+  - component: {fileID: 4877231514040025052}
+  - component: {fileID: 8074385643371157910}
   m_Layer: 0
-  m_Name: SodaCan
-  m_TagString: Pen
+  m_Name: EnemyPen
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5971056271217721221
+--- !u!4 &9109395752009475848
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5450211002215356518}
+  m_GameObject: {fileID: 3305684272489022752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.1390524, y: -2.1909761, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: -4.429294, y: -12.911608, z: 0}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1881932387333311223
+--- !u!212 &6321518082719568306
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5450211002215356518}
+  m_GameObject: {fileID: 3305684272489022752}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -72,25 +71,25 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 290f12789cc946c4793edf5b83d73ae9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 6b968fd52cf7ee749b914e2ebaa4c420, type: 3}
+  m_Color: {r: 0.29214135, g: 0.9528302, b: 0.46805802, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.7, y: 0.7}
+  m_Size: {x: 0.3125, y: 2.4375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1584007376306458126
+--- !u!61 &4877231514040025052
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5450211002215356518}
+  m_GameObject: {fileID: 3305684272489022752}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -101,39 +100,26 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 0.7, y: 0.7}
+    oldSize: {x: 0.3125, y: 2.4375}
+    newSize: {x: 0.3125, y: 2.4375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.7}
+  m_Size: {x: 0.3125, y: 2.4375}
   m_EdgeRadius: 0
---- !u!114 &5542664650087941048
+--- !u!114 &8074385643371157910
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5450211002215356518}
+  m_GameObject: {fileID: 3305684272489022752}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6c2367b005133249a3f677c4082c3ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {x: 0, y: 0, z: 0}
-  projectileSpeed: 6
---- !u!114 &-1342362892341278398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5450211002215356518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55cd822c92e42ad4e893fd62b60c3232, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeTillDestroy: 5
+  projectileSpeed: 12
