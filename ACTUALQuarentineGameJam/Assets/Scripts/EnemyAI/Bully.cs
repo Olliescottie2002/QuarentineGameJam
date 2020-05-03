@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bully : MonoBehaviour
 {
     private EnemyFSM fsm;
-    
+    private bool attackedThisTime;
 
     private void Start()
     {
@@ -24,9 +24,16 @@ public class Bully : MonoBehaviour
                 break;
             case EnemyFSM.EnemyState.Chasing:
                 fsm.Chase();
+                attackedThisTime = false;
+
                 break;
             case EnemyFSM.EnemyState.Attacking:
                 fsm.Attack();
+                if (!attackedThisTime)
+                {
+                    MeleeAttack();
+                    attackedThisTime = true;
+                }
                 break;
             case EnemyFSM.EnemyState.Dead:
                 fsm.Dead();
@@ -34,6 +41,9 @@ public class Bully : MonoBehaviour
         }
     }
 
-    
+    private void MeleeAttack()
+    {
+
+    }
 
 }
