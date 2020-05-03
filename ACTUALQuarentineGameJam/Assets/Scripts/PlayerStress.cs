@@ -55,7 +55,7 @@ public class PlayerStress : MonoBehaviour
         if (stress >= 100)
         {
             loseText.SetActive(true);
-            Invoke("LoadMenu", 2f);
+            Invoke("LoadMenu", 4f);
         }
 
     }

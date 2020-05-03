@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   currentState: 0
-  aggroRadius: 7
+  aggroRadius: 6
   unAggroRadius: 12
   chaseSpeed: 0
   attackRange: 17

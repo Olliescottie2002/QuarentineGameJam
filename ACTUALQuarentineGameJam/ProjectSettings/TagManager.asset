@@ -8,6 +8,7 @@ TagManager:
   - Pen
   - Environment
   - Collectables
+  - GameManager
   layers:
   - Default
   - TransparentFX

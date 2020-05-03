@@ -166,10 +166,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   currentState: 0
-  aggroRadius: 5
+  aggroRadius: 9
   unAggroRadius: 8
   chaseSpeed: 0
-  attackRange: 8
+  attackRange: 12
   attacked: 0
 --- !u!114 &1209085238
 MonoBehaviour:
