@@ -19,10 +19,14 @@ public class PlayerStress : MonoBehaviour
     public float camShakeDuration;
 
     public GameObject loseText;
-        
+
+    [Header("Sound")]
+    private AudioSource aSource;
+    public AudioClip playerHit;
 
     private void Start()
     {
+        aSource = GetComponent<AudioSource>();
         stressSlider.value = stress;
         inCombat = false;
     }
@@ -47,6 +51,8 @@ public class PlayerStress : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        aSource.PlayOneShot(playerHit);
+
         stress += damage;
         inCombat = true;
         currentTimeInCombat = timeBeforeOutOfCombat;

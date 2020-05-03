@@ -7,9 +7,12 @@ public class PlayerProjectile : MonoBehaviour
     public Vector3 target;
     public float projectileSpeed;
     public GameObject penDestroy;
+    private AudioSource aSource;
+    public AudioClip penHit;
 
     private void Start()
     {
+        aSource = Player_Scripts.instance.GetComponent<AudioSource>();
         Invoke("DestroySelf", 5);
 
         //Turns the projectile to face towards the target
@@ -55,13 +58,20 @@ public class PlayerProjectile : MonoBehaviour
         {
             other.GetComponent<EnemyFSM>().TakeDamageFromProjectile();
             Instantiate(penDestroy, transform.position, Quaternion.identity);
+            PlaySound();
             Destroy(gameObject);
         }
         else if (other.CompareTag("Environment"))
         {
             Instantiate(penDestroy, transform.position, Quaternion.identity);
+            PlaySound();
             Destroy(gameObject);
         }
+    }
+
+    void PlaySound()
+    {
+        aSource.PlayOneShot(penHit);
     }
 
     void DestroySelf()

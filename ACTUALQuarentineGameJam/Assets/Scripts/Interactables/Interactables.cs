@@ -8,6 +8,8 @@ public class Interactables : MonoBehaviour
     public Transform interactionTransform; // This is so that for example for a treasure chest, i can only interact with it from the front
                                            // So i create a child at the front of the chest and drag that transform in here
     private Transform player;
+    private AudioSource aSource;
+    public AudioClip itemCollected;
 
     bool hasInteracted;
 
@@ -17,6 +19,7 @@ public class Interactables : MonoBehaviour
     private void Start()
     {
         player = Player_Scripts.instance.transform;
+        aSource = player.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -53,6 +56,7 @@ public class Interactables : MonoBehaviour
     {
         //Add it so that items collected ++ on game manager or something
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<Collectables>().collected += 1;
+        aSource.PlayOneShot(itemCollected);
         gameObject.SetActive(false);
     }
 
